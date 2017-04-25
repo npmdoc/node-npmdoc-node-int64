@@ -1,4 +1,7 @@
-# api documentation for  [node-int64 (v0.4.0)](https://github.com/broofa/node-int64)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-int64.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-int64) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-int64.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-int64)
+# npmdoc-node-int64
+
+#### basic api documentation for  [node-int64 (v0.4.0)](https://github.com/broofa/node-int64)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-int64.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-int64) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-int64.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-int64)
+
 #### Support for representing 64-bit integers in JavaScript
 
 [![NPM](https://nodei.co/npm/node-int64.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-int64)
@@ -60,7 +63,8 @@
         "test": "nodeunit test.js"
     },
     "url": "http://github.com/broofa/node-int64",
-    "version": "0.4.0"
+    "version": "0.4.0",
+    "bin": {}
 }
 ```
 
