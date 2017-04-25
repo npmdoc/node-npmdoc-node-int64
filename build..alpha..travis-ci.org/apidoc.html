@@ -72,24 +72,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.node-int64.Int64">
-            function <span class="apidocSignatureSpan">node-int64.</span>Int64
-            <span class="apidocSignatureSpan">(a1, a2)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-int64.toString">
-            function <span class="apidocSignatureSpan">node-int64.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">node-int64.</span>MAX_INT</span>
 
         </li>
@@ -97,19 +79,6 @@
         <li>
 
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">node-int64.</span>MIN_INT</span>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-int64.toString">module node-int64.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-int64.toString.toString">
-            function <span class="apidocSignatureSpan">node-int64.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
 
         </li>
 
@@ -150,107 +119,7 @@
 
 
 
-    <h2>
-        <a href="#apidoc.element.node-int64.Int64" id="apidoc.element.node-int64.Int64">
-        function <span class="apidocSignatureSpan">node-int64.</span>Int64
-        <span class="apidocSignatureSpan">(a1, a2)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">Int64 = function (a1, a2) {
-  if (a1 instanceof Buffer) {
-    this.buffer = a1;
-    this.offset = a2 || 0;
-  } else if (Object.prototype.toString.call(a1) == &#x27;[object Uint8Array]&#x27;) {
-    // Under Browserify, Buffers can extend Uint8Arrays rather than an
-    // instance of Buffer. We could assume the passed in Uint8Array is actually
-    // a buffer but that won&#x27;t handle the case where a raw Uint8Array is passed
-    // in. We construct a new Buffer just in case.
-    this.buffer = new Buffer(a1);
-    this.offset = a2 || 0;
-  } else {
-    this.buffer = this.buffer || new Buffer(8);
-    this.offset = 0;
-    this.setValue.apply(this, arguments);
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
 
-
-
-    <h2>
-        <a href="#apidoc.element.node-int64.toString" id="apidoc.element.node-int64.toString">
-        function <span class="apidocSignatureSpan">node-int64.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-JavaScript Numbers are represented as [IEEE 754 double-precision floats](http://steve.hollasch.net/cgindex/coding/ieeefloat.html
-).  Unfortunately, this means they lose integer precision for values beyond +/- 2^^53.  For projects that need to accurately handle
- 64-bit ints, such as [node-thrift](https://github.com/wadey/node-thrift), a performant, Number-like class is needed.  Int64 is
-that class.
-
-Int64 instances look and feel much like JS-native Numbers.  By way of example ...
-```js
-// First, let&#x27;s illustrate the problem ...
-&#x3e; (0x123456789).<span class="apidocCodeKeywordSpan">toString</span>(16)
-&#x27;123456789&#x27; // &#x3c;- what we expect.
-&#x3e; (0x123456789abcdef0).toString(16)
-&#x27;123456789abcdf00&#x27; // &#x3c;- Ugh!  JS doesn&#x27;t do big ints. :(
-
-// So let&#x27;s create a couple Int64s using the above values ...
-
-// Require, of course
-...</pre></li>
-    </ul>
-
-
-
-
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-int64.toString" id="apidoc.module.node-int64.toString">module node-int64.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-int64.toString.toString" id="apidoc.element.node-int64.toString.toString">
-        function <span class="apidocSignatureSpan">node-int64.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-JavaScript Numbers are represented as [IEEE 754 double-precision floats](http://steve.hollasch.net/cgindex/coding/ieeefloat.html
-).  Unfortunately, this means they lose integer precision for values beyond +/- 2^^53.  For projects that need to accurately handle
- 64-bit ints, such as [node-thrift](https://github.com/wadey/node-thrift), a performant, Number-like class is needed.  Int64 is
-that class.
-
-Int64 instances look and feel much like JS-native Numbers.  By way of example ...
-```js
-// First, let&#x27;s illustrate the problem ...
-&#x3e; (0x123456789).<span class="apidocCodeKeywordSpan">toString</span>(16)
-&#x27;123456789&#x27; // &#x3c;- what we expect.
-&#x3e; (0x123456789abcdef0).toString(16)
-&#x27;123456789abcdf00&#x27; // &#x3c;- Ugh!  JS doesn&#x27;t do big ints. :(
-
-// So let&#x27;s create a couple Int64s using the above values ...
-
-// Require, of course
-...</pre></li>
-    </ul>
 
 
 </div>
